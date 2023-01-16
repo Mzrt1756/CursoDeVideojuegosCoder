@@ -10,10 +10,10 @@ public class Canon : MonoBehaviour
     public Transform shootingPosition2;
     public Transform shootingPosition3;
     public Transform shootingPosition4;
-    [SerializeField] private KeyCode shootOneBullet;
-    [SerializeField] private KeyCode shootTwoBullets;
-    [SerializeField] private KeyCode shootThreeBullets;
-    [SerializeField] private KeyCode shootFourBullets;
+    private KeyCode shootOneBullet = KeyCode.Space;
+    private KeyCode shootTwoBullets = KeyCode.J;
+    private KeyCode shootThreeBullets = KeyCode.K;
+    private KeyCode shootFourBullets = KeyCode.L;
 
 
     private void Update()
