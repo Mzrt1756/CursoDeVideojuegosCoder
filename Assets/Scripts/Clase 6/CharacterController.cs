@@ -11,12 +11,15 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private bool isInGodMode;
     [SerializeField] private BalaPruebaClase6 bulletPrefab;
     [SerializeField] private Transform shootingPoint;
+    [SerializeField] private float shootingTimer;
+    private float _shootingTimerInner;
     public float timeToMove;
     public float timeToMoveLeft;
 
     // Start is called before the first frame update
     void Start()
     {
+        _shootingTimerInner = shootingTimer;
         ResetTimer();
     }
 
@@ -34,14 +37,22 @@ public class CharacterController : MonoBehaviour
         Move(direction);
         /*Temporizador();*/
         var shouldShoot = Input.GetKeyDown(KeyCode.Space);
-        if (shouldShoot)
+        if (shouldShoot && _shootingTimerInner<=Time.time)
         {
             Shoot();
+            SuperGrow();
         }
+    }
+
+    
+    private void SuperGrow()
+    {
+        transform.localScale += Vector3.one * Time.deltaTime;
     }
 
     private void Shoot()
     {
+        _shootingTimerInner = shootingTimer + Time.time;
         Instantiate(bulletPrefab, shootingPoint.position, shootingPoint.rotation);
     }
     private void ReceiveDamage (float damage)
