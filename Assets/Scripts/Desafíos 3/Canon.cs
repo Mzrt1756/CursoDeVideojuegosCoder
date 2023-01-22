@@ -14,10 +14,15 @@ public class Canon : MonoBehaviour
     private KeyCode shootTwoBullets = KeyCode.J;
     private KeyCode shootThreeBullets = KeyCode.K;
     private KeyCode shootFourBullets = KeyCode.L;
+    public float speed;
 
 
     private void Update()
     {
+        var horizontal = Input.GetAxisRaw("Horizontal");
+        var vertical = Input.GetAxisRaw("Vertical");
+        var direction = new Vector3(x: horizontal, y: 0, z: vertical);
+
         if (Input.GetKeyDown(shootOneBullet))
         {
             DisparoUno();
@@ -36,7 +41,7 @@ public class Canon : MonoBehaviour
         }
 
     }
-
+    
     private void DisparoUno()
     {
         Instantiate(ball,shootingPosition1);
@@ -59,7 +64,10 @@ public class Canon : MonoBehaviour
         Instantiate(ball, shootingPosition3);
         Instantiate(ball, shootingPosition4);
     }
-
-
+   
+    /*private void Move(Vector3 moveDirection)
+    {
+        transform.position = transform.moveDirection * speed;
+    }*/
 
 }

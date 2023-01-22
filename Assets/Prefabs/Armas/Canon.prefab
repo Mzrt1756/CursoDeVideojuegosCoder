@@ -198,10 +198,7 @@ MonoBehaviour:
   shootingPosition2: {fileID: 1851105146794884188}
   shootingPosition3: {fileID: 5502193591621750000}
   shootingPosition4: {fileID: 4476617801208386643}
-  shootOneBullet: 32
-  shootTwoBullets: 106
-  shootThreeBullets: 107
-  shootFourBullets: 108
+  speed: 1
 --- !u!1 &8927806434743509588
 GameObject:
   m_ObjectHideFlags: 0
