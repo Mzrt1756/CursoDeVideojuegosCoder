@@ -62,7 +62,5 @@ public class CameraController : MonoBehaviour
         otherCamera3.gameObject.SetActive(false);
         otherCamera4.gameObject.SetActive(false);
 
-        //Opcion 2: Apagar y prender el componente;
-
     }
 }
